@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+   <h1>Daily food tracker</h1>
+   <form method="post" enctype="form-data">
+      {% csrf_token %}
+       {{ form.as_p}}
+         <button type="submit">Save</button>
+   </form>
+   {% endblock content %}

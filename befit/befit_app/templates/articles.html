@@ -1,0 +1,18 @@
+
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div>
+    {% for article in articles %}
+       <a href="{% url 'article' article.id %}">
+         <h1>{{ article.title|capfirst }} </h1>
+        </a>
+        {% if article.image %}
+           <img width="20%" src="{{ article.image.url }}">
+           {% endif %}
+     
+    {% endfor %}
+    </div>
+
+{% endblock content %}
+
